@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.testjcenter.uparpu.testjcenter"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories{
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    implementation 'com.uparpu.sdk:nativeads-base:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-admob:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-applovin:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-facebook:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-flurry:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-inmobi:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-mobvista:0.1.12'
+
+
+
+
+    //mv
+    implementation(name: 'mobvista_alphab', ext: 'aar')
+    implementation(name: 'mobvista_common', ext: 'aar')
+    implementation(name: 'mobvista_mvnative', ext: 'aar')
+    implementation(name: 'mobvista_nativeex', ext: 'aar')
+    implementation(name: 'mobvista_playercommon', ext: 'aar')
+    implementation(name: 'mobvista_videocommon', ext: 'aar')
+
+    //applovin
+    compile 'com.applovin:applovin-sdk:+'
+
+    //inmobi
+    compile "com.inmobi.monetization:inmobi-ads:7.0.0"
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    //admob
+    compile 'com.google.android.gms:play-services-ads:11.0.4'
+
+    //facebook
+    compile ('com.facebook.android:audience-network-sdk:4.+'){
+        exclude module: 'support-v4'
+    }
+
+    //flurry
+    compile 'com.flurry.android:analytics:8.0.2@aar'
+    compile 'com.flurry.android:ads:8.0.2@aar'
+
+
+
+    implementation ('com.facebook.fresco:fresco:0.11.0')
+    implementation 'com.facebook.stetho:stetho:1.3.1'
+    implementation 'com.android.support:recyclerview-v7:26+'
+
+    implementation 'com.android.support:multidex:1.0.1'
+
+}

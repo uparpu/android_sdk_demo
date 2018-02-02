@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <include
+        android:id="@+id/home_title_bar"
+        layout="@layout/activity_titlebar" />
+
+    <ImageView
+        android:id="@+id/boost_show"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="15dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/entry"/>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ad_type_select_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/home_title_bar"
+        android:divider="#ffbbbbbb"
+        android:dividerHeight="1dp" />
+
+</RelativeLayout>
