@@ -35,8 +35,10 @@ public class UpArpuRender implements UpArpuNativeAdRenderer<CustomNativeAd> {
         return mDevelopView;
     }
 
+
+
     @Override
-    public void renderAdView(UpArpuNativeAdView view, CustomNativeAd ad) {
+    public void renderAdView(View view, CustomNativeAd ad) {
         TextView titleView = (TextView) view.findViewById(R.id.native_ad_title);
         TextView descView = (TextView) view.findViewById(R.id.native_ad_desc);
         TextView ctaView = (TextView) view.findViewById(R.id.native_ad_install_btn);

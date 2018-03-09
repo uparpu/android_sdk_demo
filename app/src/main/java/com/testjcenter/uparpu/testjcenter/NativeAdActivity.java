@@ -72,7 +72,11 @@ public class NativeAdActivity extends Activity {
             }
         });
 
+//        UpArpuNative upArpuNative = new UpArpuNative(Context,placementid,UpArpuNativeNetworkListener);
+
         UpArpuRender upArpuRender = new UpArpuRender(this);
+
+//        upArapuNatives[0].coerceCleanAllAdCache();
 
         for (int i = 0; i < unitIds.length; i++) {
             upArapuNatives[i] = new UpArpuNative(this, unitIds[i], new UpArpuNativeNetworkListener() {
@@ -97,6 +101,7 @@ public class NativeAdActivity extends Activity {
 
                 }
             }, upArpuRender);
+
             if (upArpuNativeAdView == null) {
                 upArpuNativeAdView = new UpArpuNativeAdView(this);
             }

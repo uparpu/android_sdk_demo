@@ -4,11 +4,11 @@ android {
     compileSdkVersion 26
     buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "com.testjcenter.uparpu.testjcenter"
+        applicationId "com.testjcenter.uparpu.testjcenter222"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -31,13 +31,13 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    implementation 'com.uparpu.sdk:nativeads-base:0.1.12'
-    implementation 'com.uparpu.sdk:nativeads-admob:0.1.12'
-    implementation 'com.uparpu.sdk:nativeads-applovin:0.1.12'
-    implementation 'com.uparpu.sdk:nativeads-facebook:0.1.12'
-    implementation 'com.uparpu.sdk:nativeads-flurry:0.1.12'
-    implementation 'com.uparpu.sdk:nativeads-inmobi:0.1.12'
-    implementation 'com.uparpu.sdk:nativeads-mobvista:0.1.12'
+    implementation 'com.uparpu.sdk:nativeads-base:1.0.0'
+    implementation 'com.uparpu.sdk:nativeads-admob:1.0.0'
+    implementation 'com.uparpu.sdk:nativeads-applovin:1.0.0'
+    implementation 'com.uparpu.sdk:nativeads-facebook:1.0.0'
+    implementation 'com.uparpu.sdk:nativeads-flurry:1.0.0'
+    implementation 'com.uparpu.sdk:nativeads-inmobi:1.0.0'
+    implementation 'com.uparpu.sdk:nativeads-mintegral:1.0.0'
 
 
 

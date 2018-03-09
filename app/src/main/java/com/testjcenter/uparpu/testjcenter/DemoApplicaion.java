@@ -10,17 +10,16 @@ import com.uparpu.api.UpArpuSDK;
  */
 
 public class DemoApplicaion extends MultiDexApplication {
-    public static final String appid = "test-app-1";
-    public static final String appKey = "test-api-0001";
-//    public static final String mPlacementId = "test-placement-8";
+    public static final String appid = "a5aa1f9deda26d";
+    public static final String appKey = "4f7b9ac17decb9babec83aac078742c7";
 
-    public static final String mPlacementId_all = "test-placement-7";
-    public static final String mPlacementId_facebook = "test-placement-1";
-    public static final String mPlacementId_admob = "test-placement-2";
-    public static final String mPlacementId_inmobi = "test-placement-3";
-    public static final String mPlacementId_flurry = "test-placement-4";
-    public static final String mPlacementId_applovin = "test-placement-5";
-    public static final String mPlacementId_mobivsta = "test-placement-6";
+    public static final String mPlacementId_all = "b5aa1fa2cae775";
+    public static final String mPlacementId_facebook = "b5aa1fa4165ea3";
+    public static final String mPlacementId_admob = "b5aa1fa501d9f6";
+    public static final String mPlacementId_inmobi = "b5aa1fa5d10190";
+    public static final String mPlacementId_flurry = "b5aa1fa6c00d2f";
+    public static final String mPlacementId_applovin = "b5aa1fa7956158";
+    public static final String mPlacementId_mobivsta = "b5aa1fa85b86d5";
 
     @Override
     public void onCreate() {
