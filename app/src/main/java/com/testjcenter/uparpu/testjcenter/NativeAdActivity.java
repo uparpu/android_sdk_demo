@@ -9,11 +9,16 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.qq.e.ads.nativ.ADSize;
 import com.uparpu.api.AdError;
 import com.uparpu.nativead.api.NativeAd;
 import com.uparpu.nativead.api.UpArpuNative;
 import com.uparpu.nativead.api.UpArpuNativeAdView;
 import com.uparpu.nativead.api.UpArpuNativeNetworkListener;
+import com.uparpu.network.gdt.GDTLocationKeyMaps;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Z on 2018/1/11.
@@ -27,7 +32,9 @@ public class NativeAdActivity extends Activity {
             , DemoApplicaion.mPlacementId_inmobi
             , DemoApplicaion.mPlacementId_flurry
             , DemoApplicaion.mPlacementId_applovin
-            , DemoApplicaion.mPlacementId_mobivsta};
+            , DemoApplicaion.mPlacementId_mobivsta
+            , DemoApplicaion.mPlacementId_mopub
+            , DemoApplicaion.mPlacementId_GDT};
 
     String unitGroupName[] = new String[]{
             "All network",
@@ -36,7 +43,9 @@ public class NativeAdActivity extends Activity {
             "inmobi",
             "flurry",
             "applovin",
-            "mobvista"
+            "mobvista",
+            "mopub",
+            "gdt"
     };
 
     UpArpuNative upArapuNatives[] = new UpArpuNative[unitIds.length];
@@ -77,7 +86,7 @@ public class NativeAdActivity extends Activity {
         UpArpuRender upArpuRender = new UpArpuRender(this);
 
 //        upArapuNatives[0].coerceCleanAllAdCache();
-
+        Map<String,Object> localMap = null;
         for (int i = 0; i < unitIds.length; i++) {
             upArapuNatives[i] = new UpArpuNative(this, unitIds[i], new UpArpuNativeNetworkListener() {
                 @Override
@@ -102,6 +111,15 @@ public class NativeAdActivity extends Activity {
                 }
             }, upArpuRender);
 
+            //如果是广点通的 需要配置额外配置
+            if(i == GDTLocationKeyMaps.getGDTType()) {
+                localMap = new HashMap<>();
+                localMap.put(GDTLocationKeyMaps.ADTYPE, "3");
+                localMap.put(GDTLocationKeyMaps.AD_WIDTH, ADSize.FULL_WIDTH);//
+                localMap.put(GDTLocationKeyMaps.AD_HEIGHT, ADSize.FULL_WIDTH);//
+                upArapuNatives[i].setLocalExtra(localMap);
+            }
+
             if (upArpuNativeAdView == null) {
                 upArpuNativeAdView = new UpArpuNativeAdView(this);
             }
@@ -114,7 +132,10 @@ public class NativeAdActivity extends Activity {
             @Override
             public void onClick(View view) {
                 try{
-                    upArapuNatives[mCurrentSelectIndex].makeAdRequest();
+                    HashMap<String,String> maps = new HashMap<>();
+                    maps.put("age", "22");
+                    maps.put("sex", "lady");
+                    upArapuNatives[mCurrentSelectIndex].makeAdRequest(maps);
                 }catch (Exception e){
                     e.printStackTrace();
                 }

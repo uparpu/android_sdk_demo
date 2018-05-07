@@ -20,6 +20,8 @@ public class DemoApplicaion extends MultiDexApplication {
     public static final String mPlacementId_flurry = "b5aa1fa6c00d2f";
     public static final String mPlacementId_applovin = "b5aa1fa7956158";
     public static final String mPlacementId_mobivsta = "b5aa1fa85b86d5";
+    public static final String mPlacementId_GDT = "b5ab8590d44f82";
+    public static final String mPlacementId_mopub = "b5ab858fb0175f";
 
     @Override
     public void onCreate() {

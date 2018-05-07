@@ -9,10 +9,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.qq.e.ads.nativ.NativeExpressADView;
 import com.uparpu.nativead.api.UpArpuNativeAdRenderer;
 import com.uparpu.nativead.api.UpArpuNativeAdView;
 import com.uparpu.nativead.unitgroup.api.CustomNativeAd;
-
+import com.uparpu.network.gdt.GDTLocationKeyMaps;
 /**
  * Created by Z on 2018/1/18.
  */
@@ -26,12 +27,13 @@ public class UpArpuRender implements UpArpuNativeAdRenderer<CustomNativeAd> {
     }
 
     View mDevelopView;
-
+    int mNetworkType;
     @Override
     public View createView(Context context, int networkType) {
         if (mDevelopView == null) {
             mDevelopView = LayoutInflater.from(context).inflate(R.layout.native_ad_item, null);
         }
+        mNetworkType = networkType;
         return mDevelopView;
     }
 
@@ -61,6 +63,15 @@ public class UpArpuRender implements UpArpuNativeAdRenderer<CustomNativeAd> {
 
         contentArea.removeAllViews();
         if (mediaView != null) {
+
+            if(mNetworkType == GDTLocationKeyMaps.getGDTType() && mediaView instanceof NativeExpressADView){
+                titleView.setVisibility(View.GONE);
+                descView.setVisibility(View.GONE);
+                ctaView.setVisibility(View.GONE);
+                logoView.setVisibility(View.GONE);
+                iconView.setVisibility(View.GONE);
+            }
+
             int height = contentArea.getWidth() == 0 ? ViewGroup.LayoutParams.WRAP_CONTENT : contentArea.getWidth() * 3 / 4;
 //            CommonLogUtil.d("1111",height+":pppp:"+ViewGroup.LayoutParams.WRAP_CONTENT+"--contentArea.getWidth():"+contentArea.getWidth());
             contentArea.addView(mediaView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
