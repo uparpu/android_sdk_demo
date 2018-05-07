@@ -19,7 +19,7 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven { url 'https://dl.bintray.com/uparpu123/maven' }
+        maven { url 'https://dl.bintray.com/uparpu/maven' }
     }
 }
 
