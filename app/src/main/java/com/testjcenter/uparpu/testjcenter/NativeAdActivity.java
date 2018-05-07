@@ -116,7 +116,7 @@ public class NativeAdActivity extends Activity {
                 localMap = new HashMap<>();
                 localMap.put(GDTLocationKeyMaps.ADTYPE, "3");
                 localMap.put(GDTLocationKeyMaps.AD_WIDTH, ADSize.FULL_WIDTH);//
-                localMap.put(GDTLocationKeyMaps.AD_HEIGHT, ADSize.FULL_WIDTH);//
+                localMap.put(GDTLocationKeyMaps.AD_HEIGHT, ADSize.AUTO_HEIGHT);//
                 upArapuNatives[i].setLocalExtra(localMap);
             }
 

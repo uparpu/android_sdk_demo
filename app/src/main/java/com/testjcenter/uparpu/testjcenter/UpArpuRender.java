@@ -2,6 +2,7 @@ package com.testjcenter.uparpu.testjcenter;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +47,7 @@ public class UpArpuRender implements UpArpuNativeAdRenderer<CustomNativeAd> {
         TextView ctaView = (TextView) view.findViewById(R.id.native_ad_install_btn);
 
         FrameLayout contentArea = (FrameLayout) view.findViewById(R.id.native_ad_content_image_area);
-        View mediaView = null;//ad.getAdMediaView(contentArea, contentArea.getWidth());
+        View mediaView = ad.getAdMediaView(contentArea, contentArea.getWidth());
 
         final SimpleDraweeView iconView = (SimpleDraweeView) view.findViewById(R.id.native_ad_image);
         iconView.setImageDrawable(null);
@@ -63,7 +64,7 @@ public class UpArpuRender implements UpArpuNativeAdRenderer<CustomNativeAd> {
 
         contentArea.removeAllViews();
         if (mediaView != null) {
-
+            Log.i("test","111");
             if(mNetworkType == GDTLocationKeyMaps.getGDTType() && mediaView instanceof NativeExpressADView){
                 titleView.setVisibility(View.GONE);
                 descView.setVisibility(View.GONE);
@@ -77,7 +78,7 @@ public class UpArpuRender implements UpArpuNativeAdRenderer<CustomNativeAd> {
             contentArea.addView(mediaView, new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
 
         } else {
-
+            Log.i("test","222");
             int height = contentArea.getWidth() == 0 ? ViewGroup.LayoutParams.WRAP_CONTENT : contentArea.getWidth() * 3 / 4;
             final SimpleDraweeView imageView = new SimpleDraweeView(mContext);
 
